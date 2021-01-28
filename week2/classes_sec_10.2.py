@@ -35,7 +35,7 @@ class Person():
 # why can not we put (self, grades) inside the parameter of calc_avg_grades
 # if we use not p1 and directly put Person to print
 # how can we do access multiple attributes
-# 
+
 
 
 p1 = Person('axat',25,59,[98,96,102])
