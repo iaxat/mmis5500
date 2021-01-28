@@ -62,5 +62,5 @@ print(p1.get_name())
 print(p1.get_age())
 print(p1.get_height())
 print(p1.get_grades())
-
+print(p1.set_grades([100,100,100]))
 print(p1.calc_avg_grades())
