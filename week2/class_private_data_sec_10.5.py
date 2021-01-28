@@ -1,6 +1,8 @@
 # Section 10.5
 # making data private = encapsulation
 
+import numpy as np
+
 class Person():
     def __init__(self,name,age,height,grades) -> None:
         pass
@@ -10,4 +12,4 @@ class Person():
         self.grades = grades
 
     def calc_avg_grades(self):
-        
+        return np
