@@ -58,8 +58,9 @@ class Person():
 p1 = Person('axat', 25, 59, [98, 96, 102])
 print(p1)
 print('')
-print(p1.age)
-print(p1.grades)
-print(p1.name)
+print(p1.get_name())
+print(p1.get_age())
+print(p1.get_height())
+print(p1.get_grades())
 
 print(p1.calc_avg_grades())
