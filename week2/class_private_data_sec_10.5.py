@@ -14,7 +14,10 @@ class Person():
         self.height = height
         self.grades = grades
         self.__address = address
-# __ dpuble uncderscore is used to make data private
+
+
+# __ double underscore is used to make data private
+# need of data privatization is to prevent errors saving it from hackers is not the reason
 
 
     def calc_avg_grades(self):
