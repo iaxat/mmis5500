@@ -8,7 +8,7 @@
 
 # This program covers difference between Dict and Classes
 
-from typing import AsyncGenerator
+import numpy as np
 
 
 person_dict = {}
@@ -27,6 +27,12 @@ class Person():
         self.height = height
         self.grades = grades
 
+
+    def calc_avg_grades(self):
+        return np.mean(self.grades)
+
+
+
 p1 = Person('axat',25,59,[98,96,102])
 print(p1)
 print('')
@@ -34,3 +40,4 @@ print(p1.age)
 print(p1.grades)
 print(p1.name)
 
+print(p1.calc_avg_grades())
