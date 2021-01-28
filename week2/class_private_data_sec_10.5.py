@@ -3,7 +3,6 @@
 
 import numpy as np
 
-
 class Person():
 
 # __init__ is a constructor also known as initializer
