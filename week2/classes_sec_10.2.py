@@ -31,6 +31,9 @@ class Person():
     def calc_avg_grades(self):
         return np.mean(p1.grades)
 
+# how does p1.grades work here
+# why can not we put self, grades inside the parameter of calc_avg_grades
+# 
 
 
 p1 = Person('axat',25,59,[98,96,102])
