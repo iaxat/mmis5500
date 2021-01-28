@@ -12,4 +12,5 @@ class Person():
         self.grades = grades
 
     def calc_avg_grades(self):
-        return np
+        return np.mean(self.grades)
+
