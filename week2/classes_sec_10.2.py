@@ -33,6 +33,8 @@ class Person():
 
 # how does p1.grades work here
 # why can not we put (self, grades) inside the parameter of calc_avg_grades
+# if we use not p1 and directly put Person to print
+# how can we do access multiple attributes
 # 
 
 
