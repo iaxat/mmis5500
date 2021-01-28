@@ -48,6 +48,7 @@ class Person():
 
     def set_grades(self, grades):
         self.grades = grades
+# setters
 
 
 
