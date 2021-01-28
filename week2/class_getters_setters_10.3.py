@@ -52,6 +52,9 @@ class Person():
 
 
 
+
+
+
 p1 = Person('axat', 25, 59, [98, 96, 102])
 print(p1)
 print('')
