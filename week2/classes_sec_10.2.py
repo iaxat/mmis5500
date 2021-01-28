@@ -14,3 +14,5 @@ person_dict['age'] = 25
 person_dict['height'] = 59
 person_dict['grades'] = [98,96,102]
 
+print(person_dict)
+
