@@ -21,4 +21,3 @@ class Person():
 
     def calc_avg_grades(self):
         return np.mean(self.grades)
-
