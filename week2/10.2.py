@@ -13,5 +13,9 @@ print(person_dct)
 
 
 class Person():
-    def __init__(self) -> None:
+    def __init__(self, name, age, height, grades) -> None:
+        self.name = name
+        self.age = age
+        self.height = height
+        self.grades = grades
         
