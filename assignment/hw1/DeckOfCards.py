@@ -25,4 +25,5 @@ class DeckOfCards():
     # def deal_card(self):
 
 
-        
+deck = DeckOfCards()
+print(deck.deck())
