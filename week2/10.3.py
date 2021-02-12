@@ -39,6 +39,7 @@ class Person():
     
     def set_age(self, age):
         self.age = age
+        return self.age
 
     def set_height(self, height):
         self.height = height
@@ -46,13 +47,12 @@ class Person():
     def set_grades(self, grades):
         self.grades = grades
 
-
-
-
+# object creation
 p1 = Person('andy',39,75,[85,89,93])
 # p1 is the object
 
 print(p1)
+# shows object address
 
 print('age: ',p1.age)
 print('name: ',p1.name)
@@ -60,4 +60,11 @@ print('height: ',p1.height)
 print('grades: ',p1.grades)
 print('avg_grades: ',p1.cal_avg_grades())
 # calling function from a object would need parentheses
+print('')
+print('get_age: ',p1.get_age())
+p1.set_age(25)
+print('get_age: ', p1.get_age())
 
+print('')
+print('------')
+print('set_age: ', p1.set_age(22))
