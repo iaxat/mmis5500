@@ -27,6 +27,7 @@ class Person():
         return np.mean(self.grades)
 
 p1 = Person('andy',39,75,[85,89,93])
+# p1 is the object
 
 print(p1)
 
