@@ -1,6 +1,6 @@
 # Getters and Setters
 # Section 10.3
-# MMIS 5500
+
 import numpy as np
 
 # class
@@ -15,11 +15,11 @@ class Person():
     # avg grades
     def cal_avg_grades(self):
         return np.mean(self.grades)
-
     # Setting getters and setters for this class
 
-    # getters/accessors
 
+
+    # getters/accessors
     def get_name(self):
         return self.name
 
@@ -34,7 +34,6 @@ class Person():
 
     
     # Setters/manipulators
-
     def set_name(self,name):
         self.name = name
     
