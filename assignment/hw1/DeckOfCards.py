@@ -22,7 +22,7 @@ class DeckOfCards():
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
 
-    def deal_card(self):
+    # def deal_card(self):
 
 
         
