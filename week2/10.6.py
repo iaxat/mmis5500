@@ -9,7 +9,7 @@ class Card():
 
     
 class DeckOfCards():
-    def __init__(self, deck) -> None:
+    def __init__(self, deck=[]) -> None:
         self.deck = deck
 
     def shuffle_deck(self):
@@ -20,3 +20,18 @@ class DeckOfCards():
             print(card.face,'of',card.suit)
 
 
+suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
+faces = ['2','3','4','5','6','7','8','9','10','Jack','King','Queen','Ace']
+
+cards = []
+for suit in suits:
+    for face in faces:
+        cards.append(Card(suit,face))
+
+# object
+deck = DeckOfCards(cards)
+
+deck.print_deck()
+
+deck.shuffle_deck()
+deck.print_deck()
