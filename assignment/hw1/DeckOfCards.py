@@ -21,9 +21,3 @@ class DeckOfCards():
     def print_deck(self):
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
-
-    # def deal_card(self):
-
-
-deck = DeckOfCards()
-print(deck.deck())
