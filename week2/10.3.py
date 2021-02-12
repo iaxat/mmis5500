@@ -38,7 +38,15 @@ class Person():
     def set_name(self,name):
         self.name = name
     
-    
+    def set_age(self, age):
+        self.age = age
+
+    def set_height(self, height):
+        self.height = height
+
+    def set_grades(self, grades):
+        self.grades = grades
+
 
 
 
