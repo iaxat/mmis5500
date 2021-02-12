@@ -2,12 +2,16 @@
 # Advance Python
 # Class and Objects
 
-person = {}
-person['name'] = 'andy'
-person['age'] = 39
-person['height'] = 75
-person['grades'] = [85,89,93]
+person_dct = {}
+person_dct['name'] = 'andy'
+person_dct['age'] = 39
+person_dct['height'] = 75
+person_dct['grades'] = [85,89,93]
+
+print(person_dct)
 
 
 
-print(person)
+class Person():
+    def __init__(self) -> None:
+        
