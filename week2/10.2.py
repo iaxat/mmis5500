@@ -1,8 +1,6 @@
-# Section 10.1 and 10.2
-# Python MMIS 5500
-# Classes and Objects
-# Dict only handles static typed data
-# Dict can not handle fundtions inside them
+# 10.2
+# Advance Python
+
 
 person = {}
 person['name'] = 'andy'
@@ -11,4 +9,3 @@ person['height'] = 75
 person['grades'] = [85,89,93]
 
 print(person)
-
