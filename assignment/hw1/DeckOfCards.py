@@ -22,19 +22,41 @@ class DeckOfCards():
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
 
-deck = DeckOfCards()
-print(deck)
 
-# Class to play game
-class Play_Game():
-    def __init__(self,deck) -> None:
-        self.deck = deck
+class Get():
+    def __init__(self) -> None:
+        self.deck = DeckOfCards()
 
-    def play_game(self):
-        # Creating a deck of cards
-        deck = DeckOfCards()
+deckof = DeckOfCards()
 
-        # shuffle the deck of cards
+get1 = Get()
+print(get1)
 
 
-        # 
+
+
+
+
+
+
+
+
+
+
+
+# deck = DeckOfCards()
+# print(deck)
+
+# # Class to play game
+# class Play_Game():
+#     def __init__(self,deck) -> None:
+#         self.deck = deck
+
+#     def play_game(self):
+#         # Creating a deck of cards
+#         deck = DeckOfCards()
+
+#         # shuffle the deck of cards
+
+
+#         # 
