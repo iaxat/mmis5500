@@ -16,6 +16,32 @@ class Person():
     def cal_avg_grades(self):
         return np.mean(self.grades)
 
+    # Setting getters and setters for this class
+
+    # getters/accessors
+
+    def get_name(self):
+        return self.name
+
+    def get_age(self):
+        return self.age
+
+    def get_height(self):
+        return self.height
+    
+    def get_grades(self):
+        return self.grades
+
+    
+    # Setters/manipulators
+
+    def set_name(self,name):
+        self.name = name
+    
+    
+
+
+
 p1 = Person('andy',39,75,[85,89,93])
 # p1 is the object
 
@@ -27,3 +53,4 @@ print('height: ',p1.height)
 print('grades: ',p1.grades)
 print('avg_grades: ',p1.cal_avg_grades())
 # calling function from a object would need parentheses
+
