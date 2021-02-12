@@ -3,13 +3,13 @@
 import random
 
 class Card():
-    def __init__(self, suit, face) -> None:
+    def __init__(self, suit, face):
         self.suit = suit
         self.face = face
 
     
 class DeckOfCards():
-    def __init__(self, deck=[]) -> None:
+    def __init__(self, deck=[]):
         self.deck = deck
 
     def shuffle_deck(self):
