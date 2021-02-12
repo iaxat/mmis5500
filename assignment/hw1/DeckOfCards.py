@@ -21,3 +21,10 @@ class DeckOfCards():
     def print_deck(self):
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
+
+class Play_Game():
+    def __init__(self,deck) -> None:
+        self.deck = deck
+
+    def play_game():
+        
