@@ -10,6 +10,13 @@ class PlayGame():
     def __init__(self):
         self.d = DeckOfCards()
 
+    def play_again(self):
+        play_again = 'y'
+        while play_again == 'y':
+            play = PlayGame()
+            play.play_game()
+            print('Thank you for Playing\n\n')
+            play_again = input('Want to play again?(y/n):')
 
     def update_user_score(self, user_score, user_card_face):
         user_card_arr = []
@@ -22,6 +29,7 @@ class PlayGame():
             user_score += int(user_card_face)
         print('User Score:',user_score)
         return user_score
+
 
 
     def if_wins(self,user_score,dealer_score):
@@ -42,8 +50,6 @@ class PlayGame():
             print('Dealer Score:', dealer_score)
             print('User Score:', user_score)
             
-
-
 
 
     def play_game(self):
@@ -67,27 +73,24 @@ class PlayGame():
         user_card = self.d.get_ith_card(i)
         print('1st Card:',user_card.face,'of',user_card.suit)
         user_score = self.update_user_score(user_score,user_card.face)
-        self.if_wins(user_score,dealer_score)
+        
 
         i += 1
         user_card = self.d.get_ith_card(i)
         print('2nd Card:',user_card.face,'of',user_card.suit)
         user_score = self.update_user_score(user_score,user_card.face)
-
-
-        i += 1
         
 
-        while user_score<=21 and input('Do you want to continue hit(y/n): ') == 'y':
+        i += 1
+        while user_score<=21 and dealer_score<=21 and input('Do you want to continue hit(y/n): ') == 'y':
+            dealer_score = random.randint(17,23)
             user_card = self.d.get_ith_card(i)
                 
             print('Hit Card:',user_card.face,'of',user_card.suit)
             user_score = self.update_user_score(user_score,user_card.face)
             i+=1
+        self.if_wins(user_score,dealer_score)
 
 
-
-
-
-play = PlayGame()
-play.play_game()
+start_mission = PlayGame()
+start_mission.play_again()
