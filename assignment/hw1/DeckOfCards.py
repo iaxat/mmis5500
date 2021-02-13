@@ -42,9 +42,12 @@ class PlayGame():
         self.user_score = 0
         self.dealer_score = 0
         self.user_cards = []
+        
 
-    def get_deck(self):
-        return self.d.deck.copy
+
+
+    # def get_deck(self):
+    #     return self.d.deck.__module__
 
 
 
