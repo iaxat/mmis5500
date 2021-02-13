@@ -38,7 +38,10 @@ class DeckOfCards:
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
 
-# This function will return the deck with specific index
+    # This function will return the deck with specific index
+    # getter function
     def get_ith_card(self, i):
         return self.deck[i]
+
+
 # i is the index of the input that this function would get
