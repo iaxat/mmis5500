@@ -24,10 +24,15 @@ class PlayGame():
         print('\t\t----------------------------------------\n')
         self.d.print_deck()
         print('\n')
-        user_card = self.d.deal_card(1)
-        user_card_arr.append(user_card)
-        print(user_card.face,'of',user_card.suit)
 
+        user_card = self.d.deal_card(0)
+        print('1st Card',user_card.face,'of',user_card.suit)
+        user_card_arr.append(user_card)
+        
+        if initial_game == 0:
+            user_card = self.d.deal_card(1)
+            print('2nd Card',user_card.face,'of',user_card.suit)
+            user_card_arr.append(user_card)
 
 play = PlayGame()
 play.play_game()
