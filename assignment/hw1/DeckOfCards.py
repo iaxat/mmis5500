@@ -1,8 +1,4 @@
 import random
-import time
-import timeit
-import numpy as np
-
 
 
 class Card():
@@ -19,7 +15,7 @@ class DeckOfCards():
         for suit in suits:
             for face in faces:
                 self.deck.append(Card(suit, face))
-                
+
     def shuffle_deck(self):
         random.shuffle(self.deck)
         
@@ -36,19 +32,15 @@ class PlayGame():
     def __init__(self):
         self.d = DeckOfCards()
 
-
     def deal_cards(self):
         print('Dealing Cards to User')
         self.user_score = 0
         self.dealer_score = 0
         self.user_cards = []
-        
-
 
 
     # def get_deck(self):
     #     return self.d.deck.__module__
-
 
 
     def play_game(self):
@@ -68,9 +60,6 @@ class PlayGame():
         print('\t\t----------------------------------------')
         self.d.print_deck()
         print('')
-        print(self.get_deck())
-
-
 
 
 play = PlayGame()
