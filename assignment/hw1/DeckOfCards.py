@@ -1,4 +1,9 @@
 import random
+import time
+import timeit
+import numpy as np
+
+
 
 class Card():
     def __init__(self, suit, face):
@@ -23,29 +28,37 @@ class DeckOfCards():
             print(card.face, "of", card.suit, end=", ")
 
 
+
+# Class to play game
 class PlayGame():
     def __init__(self):
         self.d = DeckOfCards()
 
 
-    # def deal_cards(self):
+    # def deal_cards(self,deck):
+
+
+
 
 
     def play_game(self):
-        print('Starting the game of BlackJack (21)')
-        print('Kindly do not waste all your money :-P')
         print('')
-        print('Initial Deck without Shuffle')
+        print('')
+        print('\t\tStarting the game of BlackJack (21)')
+        print('\t\tKindly do not waste all your money :-P')
+        print('')
+        print('\t\t\t\tInitial Deck without Shuffle')
         self.d.print_deck()
         print('')
-        print('----------------------------------------')
+        print('\t\t----------------------------------------')
+        print('\t\t\t\tDeck to be shuffled')
+        self.d.shuffle_deck()
         print('')
-        print('Deck to be shuffled')
-
-
-
+        print('\t\t\t\tDeck Shuffled')
+        print('\t\t----------------------------------------')
+        self.d.print_deck()
+        print('')
 
 
 play = PlayGame()
-print(play.play_game())
-print(play.play_game())
+play.play_game()
