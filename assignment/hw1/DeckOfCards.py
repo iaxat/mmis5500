@@ -18,7 +18,7 @@ class DeckOfCards():
 
     def shuffle_deck(self):
         random.shuffle(self.deck)
-        
+
     def print_deck(self):
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
