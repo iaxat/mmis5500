@@ -11,7 +11,7 @@ class PlayGame():
     def play_game(self):
         initial_game = 0
         user_card_arr = []
-        
+
         print('\n\n\t\tStarting the game of BlackJack (21)')
         print('\n\n\t\tKindly do not waste all your money :-P')
         print('')
@@ -25,6 +25,7 @@ class PlayGame():
         self.d.print_deck()
         print('\n')
         user_card = self.d.deal_card(1)
+        user_card_arr.append(user_card)
         print(user_card.face,'of',user_card.suit)
 
 
