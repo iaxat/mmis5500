@@ -1,34 +1,61 @@
+# This assignment is for MIS 5500 - Advance Python
+# HW1 Blackjack
+
+# import random is for the dealer's score which will be generated randomly 17 to 23
 import random
 
+# import in this section has been applied in a different method
+# __init__.py has been created which can define as same folder as one module
 from DeckOfCards import Card as Card
 from DeckOfCards import DeckOfCards as DeckOfCards
+# classes imported from the file DeckOfCards
 
 
 # Class to play game
+# the program starts here
 class PlayGame:
+    # this function is for initialization and making object for the class DeckOfClass
+    # self makes usage available in all the files around the program
     def __init__(self):
         self.d = DeckOfCards()
 
+    # this function will execute the program since the beginning
+    # this will also ask the user for playing again
     def play_again(self):
+        # play again value has been kept y such the loop works
         play_again = "y"
         while play_again == "y":
+            # object creation of this class happens here
             play = PlayGame()
+            # initiating the function from the object of this class happens here
             play.play_game()
             print("Thank you for Playing\n\n")
+            # this section asks the user for playing again
+            # if the user selects y then the while loop will check it and intiate the programs again
+            # if the user selects n then the program will stop
             play_again = input("Want to play again?(y/n):")
 
+    # this function has been created to update the user score as per the cards
+    # this function updates the user score as per the special face cards
     def update_user_score(self, user_score, user_card_face):
-        user_card_arr = []
+        # face values like jack, king, queen and ace are defined in here
         face_value_special = ["Jack", "King", "Queen"]
         if user_card_face in face_value_special:
+            # user card face value will check from the provided array for specific face
             user_score += 10
         elif user_card_face == "Ace":
+            # since ace has a different value, it has been kept away
             user_score += 11
         else:
+            # the last else is for face values which are all numbers
+            # the user score is added for as per the face of the cards
             user_score += int(user_card_face)
         print("User Score:", user_score)
         return user_score
+        # this function return the value of user score which can used in the function for comparison
+        # matching with dealer score and putting out the value will be the work that happens because of the user score update
 
+    # this function will check if user or dealer wins
     def if_wins(self, user_score, dealer_score):
         if user_score > 21:
             print("User Loses, Dealer Wins")
