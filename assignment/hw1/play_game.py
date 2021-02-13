@@ -11,6 +11,8 @@ class PlayGame():
     def play_game(self):
         initial_game = 0
         user_card_arr = []
+        user_score = 0
+        dealer_score = 0
 
         print('\n\n\t\tStarting the game of BlackJack (21)')
         print('\n\n\t\tKindly do not waste all your money :-P')
@@ -26,13 +28,22 @@ class PlayGame():
         print('\n')
 
         user_card = self.d.deal_card(0)
-        print('1st Card',user_card.face,'of',user_card.suit)
+        print('1st Card:',user_card.face,'of',user_card.suit)
         user_card_arr.append(user_card)
         
         if initial_game == 0:
             user_card = self.d.deal_card(1)
-            print('2nd Card',user_card.face,'of',user_card.suit)
+            print('2nd Card:',user_card.face,'of',user_card.suit)
             user_card_arr.append(user_card)
+            initial_game = 1
+        else:
+            pass
+        
+
+        
+
+
+
 
 play = PlayGame()
 play.play_game()
