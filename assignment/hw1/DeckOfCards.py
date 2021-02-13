@@ -21,3 +21,6 @@ class DeckOfCards():
     def print_deck(self):
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
+
+    def get_ith_card(self,i):
+        return self.deck[i]

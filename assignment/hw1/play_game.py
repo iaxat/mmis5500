@@ -1,16 +1,54 @@
+import random
+
 from DeckOfCards import Card as Card
 from DeckOfCards import DeckOfCards as DeckOfCards
+
+
 
 # Class to play game
 class PlayGame():
     def __init__(self):
         self.d = DeckOfCards()
 
-    def play_game(self):
-        first_game = 0
+
+    def update_user_score(self, user_score, user_card_face):
         user_card_arr = []
+        face_value_special = ['Jack', 'King', 'Queen']
+        if user_card_face in face_value_special:
+            user_score+=10
+        elif user_card_face == 'Ace':
+            user_score+=11
+        else:
+            user_score += int(user_card_face)
+        print('User Score:',user_score)
+        return user_score
+
+
+    def if_wins(self,user_score,dealer_score):
+        if user_score>21:
+            print('User Loses, Dealer Wins')
+            print('Dealer Score:', dealer_score)
+            print('User Score:', user_score)
+        elif dealer_score>21:
+            print('Dealer Loses, User Wins')
+            print('Dealer Score:', dealer_score)
+            print('User Score:', user_score)
+        elif user_score<=dealer_score:
+            print('User Loses, Dealer Wins')
+            print('Dealer Score:', dealer_score)
+            print('User Score:', user_score)
+        else:
+            print('User Wins')
+            print('Dealer Score:', dealer_score)
+            print('User Score:', user_score)
+            
+
+
+
+
+    def play_game(self):
+        dealer_score = random.randint(17,23)
         user_score = 0
-        dealer_score = 0
 
         print('\n\n\t\tStarting the game of BlackJack (21)')
         print('\n\n\t\tKindly do not waste all your money :-P')
@@ -25,26 +63,28 @@ class PlayGame():
         self.d.print_deck()
         print('\n')
 
-        user_card = self.d.deck[0]
+        i = 0
+        user_card = self.d.get_ith_card(i)
         print('1st Card:',user_card.face,'of',user_card.suit)
-        user_card_arr.append(user_card)
-        
-        if first_game == 0:
-            user_card = self.d.deck[1]
-            print('2nd Card:',user_card.face,'of',user_card.suit)
-            user_card_arr.append(user_card)
-            first_game = 1
-        else:
-            pass
-        
+        user_score = self.update_user_score(user_score,user_card.face)
+        self.if_wins(user_score,dealer_score)
+
+        i += 1
+        user_card = self.d.get_ith_card(i)
+        print('2nd Card:',user_card.face,'of',user_card.suit)
+        user_score = self.update_user_score(user_score,user_card.face)
+
+
+        i += 1
         
 
-        while (continue_hit = input('Do you want to continue hit(y/n): ')) == 'y':
-            for i in deck:
-                user_card = self.d.deck[i+2]
+        while user_score<=21 and input('Do you want to continue hit(y/n): ') == 'y':
+            user_card = self.d.get_ith_card(i)
+                
+            print('Hit Card:',user_card.face,'of',user_card.suit)
+            user_score = self.update_user_score(user_score,user_card.face)
+            i+=1
 
-        
-        
 
 
 
