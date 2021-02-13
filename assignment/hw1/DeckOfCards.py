@@ -43,7 +43,8 @@ class PlayGame():
         self.dealer_score = 0
         self.user_cards = []
 
-
+    def get_deck(self):
+        return self.d.deck.copy
 
 
 
@@ -54,7 +55,7 @@ class PlayGame():
         print('\t\tKindly do not waste all your money :-P')
         print('')
         print('\t\t\t\tInitial Deck without Shuffle')
-        self.deck = self.d.print_deck()
+        self.d.print_deck()
         print('')
         print('\t\t----------------------------------------')
         print('\t\t\t\tDeck to be shuffled')
@@ -64,7 +65,7 @@ class PlayGame():
         print('\t\t----------------------------------------')
         self.d.print_deck()
         print('')
-
+        print(self.get_deck())
 
 
 
