@@ -14,25 +14,18 @@ class PlayGame():
         self.dealer_score = 0
         self.user_cards = []
 
-    
-
     def play_game(self):
+        print('\n\n\t\tStarting the game of BlackJack (21)')
+        print('\n\n\t\tKindly do not waste all your money :-P')
         print('')
-        print('')
-        print('\t\tStarting the game of BlackJack (21)')
-        print('\t\tKindly do not waste all your money :-P')
-        print('')
-        print('\t\t\t\tInitial Deck without Shuffle')
+        print('\n\n\t\t\t\tInitial Deck without Shuffle')
         self.d.print_deck()
-        print('')
-        print('\t\t----------------------------------------')
+        print('\n\t\t----------------------------------------')
         print('\t\t\t\tDeck to be shuffled')
         self.d.shuffle_deck()
-        print('')
-        print('\t\t\t\tDeck Shuffled')
-        print('\t\t----------------------------------------')
+        print('\n\t\t\t\tDeck Shuffled')
+        print('\t\t----------------------------------------\n')
         self.d.print_deck()
-        print('')
         # print(self.d.get_deck_array())
 
 play = PlayGame()
