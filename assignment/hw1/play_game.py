@@ -32,7 +32,7 @@ class PlayGame():
         user_card_arr.append(user_card)
         
         if initial_game == 0:
-            user_card = self.d.deal_card(1)
+            user_card = self.d.deck[1]
             print('2nd Card:',user_card.face,'of',user_card.suit)
             user_card_arr.append(user_card)
             initial_game = 1
