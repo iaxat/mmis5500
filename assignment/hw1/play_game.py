@@ -27,7 +27,7 @@ class PlayGame():
         self.d.print_deck()
         print('\n')
 
-        user_card = self.d.deal_card(0)
+        user_card = self.d.deck[0]
         print('1st Card:',user_card.face,'of',user_card.suit)
         user_card_arr.append(user_card)
         
@@ -39,7 +39,7 @@ class PlayGame():
         else:
             pass
         
-
+        
         
 
 
