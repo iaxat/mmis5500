@@ -35,8 +35,9 @@ class PlayGame():
         self.d = DeckOfCards()
 
 
-    # def deal_cards(self,deck):
-
+    def deal_cards(self):
+        print('Dealing Cards')
+        
 
 
 
@@ -58,6 +59,9 @@ class PlayGame():
         print('\t\t----------------------------------------')
         self.d.print_deck()
         print('')
+
+
+
 
 
 play = PlayGame()
