@@ -42,7 +42,7 @@ class PlayGame():
         self.user_score = 0
         self.dealer_score = 0
         self.user_cards = []
-        
+
 
 
 
@@ -54,7 +54,7 @@ class PlayGame():
         print('\t\tKindly do not waste all your money :-P')
         print('')
         print('\t\t\t\tInitial Deck without Shuffle')
-        self.d.print_deck()
+        self.deck = self.d.print_deck()
         print('')
         print('\t\t----------------------------------------')
         print('\t\t\t\tDeck to be shuffled')
