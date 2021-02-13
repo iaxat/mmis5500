@@ -24,6 +24,6 @@ class DeckOfCards():
             print(card.face, "of", card.suit, end=", ")
 
     def deal_card(self,i):
-        self.user_cards = []
+        # self.user_cards = []
         return self.deck[i]
 

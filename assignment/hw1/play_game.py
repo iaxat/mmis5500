@@ -20,6 +20,7 @@ class PlayGame():
         print('\n\t\t\t\tDeck Shuffled')
         print('\t\t----------------------------------------\n')
         self.d.print_deck()
+        print('\n')
         user_card = self.d.deal_card(1)
         print(user_card.face,'of',user_card.suit)
 
