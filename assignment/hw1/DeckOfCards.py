@@ -23,40 +23,29 @@ class DeckOfCards():
             print(card.face, "of", card.suit, end=", ")
 
 
-class Get():
-    def __init__(self) -> None:
-        self.deck = DeckOfCards()
-
-deckof = DeckOfCards()
-
-get1 = Get()
-print(get1)
+class PlayGame():
+    def __init__(self):
+        self.d = DeckOfCards()
 
 
+    # def deal_cards(self):
+
+
+    def play_game(self):
+        print('Starting the game of BlackJack (21)')
+        print('Kindly do not waste all your money :-P')
+        print('')
+        print('Initial Deck without Shuffle')
+        self.d.print_deck()
+        print('')
+        print('----------------------------------------')
+        print('')
+        print('Deck to be shuffled')
 
 
 
 
 
-
-
-
-
-
-
-# deck = DeckOfCards()
-# print(deck)
-
-# # Class to play game
-# class Play_Game():
-#     def __init__(self,deck) -> None:
-#         self.deck = deck
-
-#     def play_game(self):
-#         # Creating a deck of cards
-#         deck = DeckOfCards()
-
-#         # shuffle the deck of cards
-
-
-#         # 
+play = PlayGame()
+print(play.play_game())
+print(play.play_game())
