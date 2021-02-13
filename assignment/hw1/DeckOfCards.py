@@ -29,6 +29,8 @@ class DeckOfCards():
 
 
 
+
+
 # Class to play game
 class PlayGame():
     def __init__(self):
@@ -36,8 +38,11 @@ class PlayGame():
 
 
     def deal_cards(self):
-        print('Dealing Cards')
-        
+        print('Dealing Cards to User')
+        self.user_score = 0
+        self.dealer_score = 0
+        self.user_cards = []
+
 
 
 
