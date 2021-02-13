@@ -1,5 +1,3 @@
-
-
 from DeckOfCards import Card as Card
 from DeckOfCards import DeckOfCards as DeckOfCards
 
@@ -9,7 +7,7 @@ class PlayGame():
         self.d = DeckOfCards()
 
     def play_game(self):
-        initial_game = 0
+        first_game = 0
         user_card_arr = []
         user_score = 0
         dealer_score = 0
@@ -31,14 +29,20 @@ class PlayGame():
         print('1st Card:',user_card.face,'of',user_card.suit)
         user_card_arr.append(user_card)
         
-        if initial_game == 0:
+        if first_game == 0:
             user_card = self.d.deck[1]
             print('2nd Card:',user_card.face,'of',user_card.suit)
             user_card_arr.append(user_card)
-            initial_game = 1
+            first_game = 1
         else:
             pass
         
+        
+
+        while (continue_hit = input('Do you want to continue hit(y/n): ')) == 'y':
+            for i in deck:
+                user_card = self.d.deck[i+2]
+
         
         
 
