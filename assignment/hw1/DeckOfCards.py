@@ -16,6 +16,11 @@ class DeckOfCards():
             for face in faces:
                 self.deck.append(Card(suit, face))
 
+
+    # def get_deck_array(self):
+    #     return self.deck
+
+
     def shuffle_deck(self):
         random.shuffle(self.deck)
         
@@ -38,6 +43,8 @@ class PlayGame():
         self.dealer_score = 0
         self.user_cards = []
 
+        
+
     # def get_deck(self):
     #     return self.d.deck.__module__
 
@@ -58,7 +65,7 @@ class PlayGame():
         print('\t\t----------------------------------------')
         self.d.print_deck()
         print('')
-
+        # print(self.d.get_deck_array())
 
 play = PlayGame()
 play.play_game()

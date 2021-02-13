@@ -17,7 +17,7 @@ class DeckOfCards():
 
     def print_deck(self):
         for card in self.deck:
-            print(card.face,'of',card.suit)
+            print(card.face,'of',card.suit, end=',')
 
 
 suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
@@ -33,5 +33,5 @@ deck = DeckOfCards(cards)
 
 deck.print_deck()
 
-deck.shuffle_deck()
+
 deck.print_deck()
