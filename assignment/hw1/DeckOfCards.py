@@ -16,13 +16,14 @@ class DeckOfCards():
             for face in faces:
                 self.deck.append(Card(suit, face))
 
-    def get_deck_array(self):
-        return self.deck
-
     def shuffle_deck(self):
         random.shuffle(self.deck)
         
     def print_deck(self):
         for card in self.deck:
             print(card.face, "of", card.suit, end=", ")
+
+    def deal_card(self,i):
+        self.user_cards = []
+        return self.deck[i]
 
