@@ -1,10 +1,7 @@
 
 
-import os
-import sys
-
-
-
+from DeckOfCards import Card as Card
+from DeckOfCards import DeckOfCards as DeckOfCards
 
 # Class to play game
 class PlayGame():
@@ -36,7 +33,7 @@ class PlayGame():
         print('\t\t----------------------------------------')
         self.d.print_deck()
         print('')
-        print(self.d.get_deck_array())
+        # print(self.d.get_deck_array())
 
 play = PlayGame()
 play.play_game()
