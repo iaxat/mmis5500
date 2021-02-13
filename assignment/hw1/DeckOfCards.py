@@ -11,7 +11,7 @@ class DeckOfCards():
         self.deck = []
         suits = ["Hearts", "Diamonds", "Spades", "Clubs"]
         faces = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-        
+
         for suit in suits:
             for face in faces:
                 self.deck.append(Card(suit, face))
