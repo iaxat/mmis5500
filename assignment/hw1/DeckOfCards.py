@@ -38,10 +38,8 @@ class PlayGame():
         self.dealer_score = 0
         self.user_cards = []
 
-
     # def get_deck(self):
     #     return self.d.deck.__module__
-
 
     def play_game(self):
         print('')
