@@ -25,4 +25,3 @@ class DeckOfCards():
 
     def deal_card(self,i):
         return self.deck[i]
-
