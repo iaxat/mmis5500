@@ -9,6 +9,9 @@ class PlayGame():
         self.d = DeckOfCards()
 
     def play_game(self):
+        initial_game = 0
+        user_card_arr = []
+        
         print('\n\n\t\tStarting the game of BlackJack (21)')
         print('\n\n\t\tKindly do not waste all your money :-P')
         print('')
