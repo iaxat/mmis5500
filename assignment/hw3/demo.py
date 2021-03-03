@@ -2,16 +2,16 @@ import requests
 import json
 from datetime import date
 
-def append():
-    req_dict={}
-    url = (
-"https://covid-api.mmediagroup.fr/v1/history?country=India&status=confirmed"
-    )
-    req = requests.get(url)
-    req_dict = json.loads(req.text)
-    dic_dates_india = req_dict['All']['dates']
-    print(req_dict)
-# append()
+# def append():
+#     req_dict={}
+#     url = (
+# "https://covid-api.mmediagroup.fr/v1/history?country=India&status=confirmed"
+#     )
+#     req = requests.get(url)
+#     req_dict = json.loads(req.text)
+#     dic_dates_india = req_dict['All']['dates']
+#     print(req_dict)
+# # append()
 
 
 def covid(country, status):
@@ -35,8 +35,8 @@ def covid(country, status):
             req_dict_selected[key] = value    
 
     print(req_dict_selected)
-
-    with open('country.json', 'w') as outfile:
+    file_name = country
+    with open(file_name+'.json', 'w') as outfile:
         json.dump(req_dict_selected, outfile)
 
 covid("India", "confirmed")
