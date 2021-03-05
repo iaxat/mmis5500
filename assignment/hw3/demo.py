@@ -36,7 +36,8 @@ def covid(country, status):
         ):
             data_list.append([key, value])
 
-        # this is for creating json file
+    # this is for creating json file
+    for key, value in req_dict[key1][key2].items():
         key_object = date.fromisoformat(key)
         if key_object >= date.fromisoformat(
             "2020-02-16"
