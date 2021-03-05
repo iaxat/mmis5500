@@ -5,28 +5,26 @@ from datetime import date
 def covid(country, status):
     req_dict = {}
     data_list = {}
-    temp_dict = {}
+    req_dict_json_file = {}
 
     countryStats = requests.get(f"https://covid-api.mmediagroup.fr/v1/history?country={country}&status={status}").json()
     req_dict = countryStats
-    # stateStats = countryStats[status]
-    # print([stateStats['confirmed'], stateStats['recovered'], stateStats['deaths']])
 
     key1 = "All"
     key2 = "dates"
 
     data_list=[]
+
     for key, value in req_dict[key1][key2].items():
-        key= date.fromisoformat(key)
-        # print(key_obj,value)
+        key_object = date.fromisoformat(key)
+        if key_object >= date.fromisoformat('2020-02-15') and key_object<= date.fromisoformat('2021-02-15'):
+            req_dict_json_file[key] = value
+
+
+    for key, value in req_dict[key1][key2].items():
+        key = date.fromisoformat(key)
         if key >= date.fromisoformat('2020-02-15') and key<= date.fromisoformat('2021-02-15'):
             data_list.append([key,value])
-            
-        # if key >= date.fromisoformat('2020-01-31') and key< date.fromisoformat('2021-03-01'):
-        #     temp_dict[key] = value
-        # print(temp_dict)
-        # print(key_obj.month)
-        # print(key," : ",value)
 
     for i in range(0,len(data_list)-1):
         data_list[i][1]=data_list[i][1]-data_list[i+1][1]
@@ -97,9 +95,9 @@ def covid(country, status):
             max_month=key
 
 
-    # file_name = country
-    # with open(file_name+'.json', 'w') as outfile:
-    #     json.dump(data_list, outfile)
+    file_name = country
+    with open(file_name+'.json', 'w') as outfile:
+        json.dump(req_dict_json_file, outfile)
 
     print("\n")
     print("Covid Confirmed Cases Statistics")
