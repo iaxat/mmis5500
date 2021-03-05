@@ -17,7 +17,7 @@ def covid(country, status):
 
     for key, value in req_dict[key1][key2].items():
         key_object = date.fromisoformat(key)
-        if key_object >= date.fromisoformat('2020-02-15') and key_object<= date.fromisoformat('2021-02-15'):
+        if key_object >= date.fromisoformat('2020-02-16') and key_object<= date.fromisoformat('2021-02-15'):
             req_dict_json_file[key] = value
 
 
