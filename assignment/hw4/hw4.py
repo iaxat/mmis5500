@@ -17,14 +17,17 @@ currencies=["xrp","ada","bch","eos","ltc","eth","btc"]
 
 g = nx.DiGraph()
 edges=[]
-# array 
 
+# condition to loop among the currency
+# where each pair is generated
 for i in range(len(ids)):
-    for j in range(len(ids)) :
+    for j in range(len(ids)):
+        # confition for removing repetition
         if i!=j:
             url = "https://api.coingecko.com/api/v3/simple/price?ids="+ids[i]+","+ids[j]+"&vs_currencies="+currencies[i]+","+currencies[j]+""
             req_data=requests.get(url)
             currency_dict = json.loads(req_data.text)
+            # Condition to pass ada
             if(currencies[j]=='ada'):
                 pass
             else:
