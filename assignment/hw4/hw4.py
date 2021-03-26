@@ -19,12 +19,12 @@ for i in range(len(ids)):
     for j in range(len(ids)) :
         if i!=j:
             url = "https://api.coingecko.com/api/v3/simple/price?ids="+ids[i]+","+ids[j]+"&vs_currencies="+currencies[i]+","+currencies[j]+""
-            req=requests.get(url)
-            req_dict = json.loads(req.text)
+            req_data=requests.get(url)
+            currency_dict = json.loads(req_data.text)
             if(currencies[j]=='ada'):
                 pass
             else:
-                edges.append((currencies[i], currencies[j],float(req_dict[ids[i]][currencies[j]])))
+                edges.append((currencies[i], currencies[j],float(currency_dict[ids[i]][currencies[j]])))
             j+=1
     i+=1
 
