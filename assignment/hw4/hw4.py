@@ -5,10 +5,8 @@
 import requests
 import json
 from itertools import count, permutations,combinations
-
 import networkx as nx
 from networkx.classes.function import path_weight
-
 import matplotlib.pyplot as plt
 
 ids=["ripple","cardano","bitcoin-cash","eos","litecoin","ethereum","bitcoin"]
@@ -19,27 +17,19 @@ edges=[]
 
 for i in range(len(ids)):
     for j in range(len(ids)) :
-
         if i!=j:
             url = "https://api.coingecko.com/api/v3/simple/price?ids="+ids[i]+","+ids[j]+"&vs_currencies="+currencies[i]+","+currencies[j]+""
             req=requests.get(url)
             req_dict = json.loads(req.text)
             if(currencies[j]=='ada'):
-                # edges.append((currencies[i],currencies[j],float(req_dict[ids[i]][currencies[j]])))
                 pass
-            # elif(currencies[j]=='ada'):
-            #     pass
             else:
                 edges.append((currencies[i], currencies[j],float(req_dict[ids[i]][currencies[j]])))
-                # edges.append((currencies[j], currencies[i],float(req_dict[ids[j]][currencies[i]])))
             j+=1
     i+=1
 
 print(edges)
 g.add_weighted_edges_from(edges)
-
-# # print all nodes
-# print(g.nodes)
 
 #for fun, you can save an image of your graph
 pos = nx.circular_layout(g)  # pos = nx.nx_agraph.graphviz_layout(G)
@@ -48,7 +38,6 @@ labels = nx.get_edge_attributes(g, 'weight')
 nx.draw_networkx_edge_labels(g, pos, edge_labels=labels)
 
 plt.savefig("graph.png")
-
 
 # print(g.nodes)
 # input()
