@@ -17,27 +17,35 @@ currencies=["xrp","ada","bch","eos","ltc","eth","btc"]
 g = nx.DiGraph()
 edges=[]
 
+# while÷]
+
+
 for i in range(len(ids)):
-    for j in range(i+1,len(ids)):
-        url = "https://api.coingecko.com/api/v3/simple/price?ids="+ids[i]+","+ids[j]+"&vs_currencies="+currencies[i]+","+currencies[j]+""
-        req=requests.get(url)
-        req_dict = json.loads(req.text)
-        if(currencies[i]=='ada'):
-            edges.append((currencies[i],currencies[j],float(req_dict[ids[i]][currencies[j]])))
-        elif(currencies[j]=='ada'):
-            pass
-        else:
-            edges.append((currencies[i], currencies[j],float(req_dict[ids[i]][currencies[j]])))
-            edges.append((currencies[j], currencies[i],float(req_dict[ids[j]][currencies[i]])))
-        j+=1
+    for j in range(len(ids)) :
+
+        if i!=j:
+            url = "https://api.coingecko.com/api/v3/simple/price?ids="+ids[i]+","+ids[j]+"&vs_currencies="+currencies[i]+","+currencies[j]+""
+            req=requests.get(url)
+            req_dict = json.loads(req.text)
+            if(currencies[j]=='ada'):
+                # edges.append((currencies[i],currencies[j],float(req_dict[ids[i]][currencies[j]])))
+                pass
+            # elif(currencies[j]=='ada'):
+            #     pass
+            else:
+                edges.append((currencies[i], currencies[j],float(req_dict[ids[i]][currencies[j]])))
+                # edges.append((currencies[j], currencies[i],float(req_dict[ids[j]][currencies[i]])))
+            j+=1
     i+=1
 
-url = "https://api.coingecko.com/api/v3/simple/price?ids=cardano,ripple&vs_currencies=ada,xrp"
-req=requests.get(url)
-req_dict = json.loads(req.text)
-edges.append(('ada','xrp',req_dict["cardano"]["xrp"]))
+# url = "https://api.coingecko.com/api/v3/simple/price?ids=cardano,ripple&vs_currencies=ada,xrp"
+# req=requests.get(url)
+# req_dict = json.loads(req.text)
+# edges.append(('ada','xrp',req_dict["cardano"]["xrp"]))
+# to delete
 
-# print(edges)
+
+print(edges)
 g.add_weighted_edges_from(edges)
 
 # # print all nodes
@@ -59,7 +67,7 @@ greatest_path = []
 lowest_weight = 99999999
 lowest_path = []
 for n1, n2 in combinations(g.nodes, 2):
-    print("paths from ", n1, "to", n2, "----------------------------------")
+    # print("paths from ", n1, "to", n2, "----------------------------------")
     for path in nx.all_simple_paths(g, source=n1, target=n2):
         # Update this code to multiply all the edges in the path and print
         # the factor
@@ -68,7 +76,7 @@ for n1, n2 in combinations(g.nodes, 2):
             # print("edge from",path[i],"to",path[i+1],": ",g[path[i]][path[i+1]]["weight"])
             path_weight_to *= g[path[i]][path[i + 1]]["weight"]
 
-        print(path," : ",path_weight_to)
+        # print(path," : ",path_weight_to)
 
         path.reverse()
 
@@ -76,7 +84,7 @@ for n1, n2 in combinations(g.nodes, 2):
         for i in range(len(path) - 1):
             path_weight_from *= g[path[i]][path[i + 1]]["weight"]
 
-        print(path, " : ", path_weight_from)
+        # print(path, " : ", path_weight_from)
 
         path_weight_factor = path_weight_to * path_weight_from
 
