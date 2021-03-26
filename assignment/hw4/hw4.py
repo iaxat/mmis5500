@@ -8,14 +8,16 @@ from itertools import count, permutations,combinations
 import networkx as nx
 from networkx.classes.function import path_weight
 import matplotlib.pyplot as plt
+# library import
 
-
+# currency id
 ids=["ripple","cardano","bitcoin-cash","eos","litecoin","ethereum","bitcoin"]
 currencies=["xrp","ada","bch","eos","ltc","eth","btc"]
 
 
 g = nx.DiGraph()
 edges=[]
+# array 
 
 for i in range(len(ids)):
     for j in range(len(ids)) :
