@@ -17,9 +17,6 @@ currencies=["xrp","ada","bch","eos","ltc","eth","btc"]
 g = nx.DiGraph()
 edges=[]
 
-# while÷]
-
-
 for i in range(len(ids)):
     for j in range(len(ids)) :
 
@@ -37,13 +34,6 @@ for i in range(len(ids)):
                 # edges.append((currencies[j], currencies[i],float(req_dict[ids[j]][currencies[i]])))
             j+=1
     i+=1
-
-# url = "https://api.coingecko.com/api/v3/simple/price?ids=cardano,ripple&vs_currencies=ada,xrp"
-# req=requests.get(url)
-# req_dict = json.loads(req.text)
-# edges.append(('ada','xrp',req_dict["cardano"]["xrp"]))
-# to delete
-
 
 print(edges)
 g.add_weighted_edges_from(edges)
